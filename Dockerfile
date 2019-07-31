@@ -8,6 +8,6 @@ WORKDIR /app
 ADD . /app
 
 #Give permission to execute install_jenkins.sh file
-RUN chmod 777 "./app/jenkins.sh"
+RUN chmod 777 "./jenkins.sh"
 
 ENTRYPOINT ["./jenkins.sh"]
