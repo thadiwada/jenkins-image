@@ -2,16 +2,16 @@
 FROM ubuntu:18.10
 
 #Maintainer of this docker build
-MAINTAINER Manivannan
+MAINTAINER ramesh
 
 #User to build this image
 #USER docker
 
 #Set the WORKDIR
-WORKDIR /jenkins
+WORKDIR /Jenkins
 
 #Add all the source code to this directory
-ADD . /jenkins
+ADD . /Jenkins
 
 #Give permission to execute install_jenkins.sh file
 RUN chmod +x ./install_jenkins.sh
