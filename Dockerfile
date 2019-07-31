@@ -1,15 +1,23 @@
 #Pull a ubuntu image of version 18.10
 FROM ubuntu:18.10
 
-#Set the WORKDIR
-WORKDIR /python
+#Maintainer of this docker build
+MAINTAINER Manivannan
 
-#Add all the soccurce code to this directory
-ADD . /python
+#User to build this image
+#USER docker
+
+#Set the WORKDIR
+WORKDIR /jenkins
+
+#Add all the source code to this directory
+ADD . /jenkins
 
 #Give permission to execute install_jenkins.sh file
-RUN  chmod 777 ./jenkins.sh
+RUN chmod +x ./install_jenkins.sh
 
-ENTRYPOINT ["./jenkins.sh"]
+EXPOSE 8080
 
-CMD ["/bin/bash"]
+ENTRYPOINT ["./install_jenkins.sh"]
+
+CMD ["/bin/sh"]
