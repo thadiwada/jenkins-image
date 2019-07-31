@@ -2,10 +2,10 @@
 FROM ubuntu:18.10
 
 #Set the WORKDIR
-WORKDIR /Jenkins
+WORKDIR /python
 
 #Add all the soccurce code to this directory
-ADD . /Jenkins
+ADD . /python
 
 #Give permission to execute install_jenkins.sh file
 RUN  chmod 777 ./jenkins.sh
