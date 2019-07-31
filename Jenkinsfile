@@ -6,7 +6,7 @@ node{
       }
    
    stage('Docker Build') {
-     def app = docker.build "thadiwada/python-docker-app-openshifts"
+     def app = docker.build "thadiwada/jenkins-image"
     }
    
    stage("Tag & Push image"){
