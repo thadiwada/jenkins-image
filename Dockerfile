@@ -11,3 +11,5 @@ ADD . /app
 RUN chmod 777 "./jenkins.sh"
 
 ENTRYPOINT ["./jenkins.sh"]
+
+CMD ["/bin/bash"]
