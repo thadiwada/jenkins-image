@@ -11,9 +11,9 @@ node{
    
    stage("Tag & Push image"){
       withDockerRegistry([credentialsId: 'dockerID',url: ""]) {
-          sh 'docker tag thadiwada/python-docker-app-openshifts thadiwada/python-docker-app-openshifts:001'
-          sh 'docker push thadiwada/python-docker-app-openshifts:001'
-          sh 'docker push thadiwada/python-docker-app-openshifts:latest'
+          sh 'docker tag thadiwada/jenkins-image thadiwada/jenkins-image:001'
+          sh 'docker push thadiwada/jenkins-image:001'
+          sh 'docker push thadiwada/jenkins-image:latest'
       }
     }
    
@@ -25,8 +25,8 @@ node{
      //sh 'oc status'
     }
    
-    stage('App deployed to Openshift environment') {
-     echo 'App deployed to Openshift environment..'
+    stage('App deployed to jenkins-image environment') {
+     echo 'App deployed to jenkins-image environment..'
     }
    
 
