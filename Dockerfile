@@ -2,12 +2,12 @@
 FROM ubuntu:18.10
 
 #Set the WORKDIR
-WORKDIR /jenkins
+WORKDIR /app
 
 #Add all the source code to this directory
-ADD . /jenkins
+ADD ./app
 
 #Give permission to execute install_jenkins.sh file
-RUN chmod +x ./install_jenkins.sh
+RUN chmod +x "/.jenkins.sh"
 
-ENTRYPOINT ["install_jenkins.sh"]
+ENTRYPOINT ["jenkins.sh"]
