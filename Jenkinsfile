@@ -31,9 +31,9 @@ pipeline {
       parallel {
         stage('Mocha Tests') {
           steps {
-            sh 'docker run --name nodeapp-dev --network="bridge" -d \
+            sh 'docker run --name nodeapp-dev --network="my_isolated_bridge_network" -d \
             -p 9000:9000 nodeapp-dev:trunk'
-            sh 'docker run --name test-image -v $PWD:/JUnit --network="bridge" \
+            sh 'docker run --name test-image -v $PWD:/JUnit --network="my_isolated_bridge_network" \
             --link=nodeapp-dev -d -p 9001:9000 \
             test-image:latest'
           }
